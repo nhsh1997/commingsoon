@@ -31,12 +31,11 @@ app.use("js", express.static(path.join(__dirname, 'public/commingsoon/js')));
 
 app.use("vendor", express.static(path.join(__dirname, 'public/commingsoon/vendor')));
 
-
+app.use(".well-known/pki-validation", express.static(path.join(__dirname, 'public/commingsoon/.well-known/pki-validation')))
 
 app.get("", (req, res)=>{
 	return res.sendFile(path.join(__dirname, "/public/comingsoon/index.html"));
 })
-
 
 
 module.exports = app;
